@@ -11,9 +11,11 @@ Credit goes to Eugene Khoroshavin for the original code.<br/>
 http://fdump.narod.ru/rgb.htm
 
 <h2>How?</h2>
-Compiled with Visual Studio Community 2017.<br/>
-Open the ColorMill.sln file, choose Release and x64 then run Local Windows Debugger.<br/> 
-Copy the resulting ColorMill.vdf from "Release" folder to the VirtualDub plugins folder. ("plugin64" for VirtualDub2).<br/>
+<ul>
+  <li>Compiled with Visual Studio Community 2017.</li>
+  <li>Open the ColorMill.sln file, choose Release and x64 then run Local Windows Debugger.</li>
+  <li>Copy the resulting ColorMill.vdf from "Release" folder to the VirtualDub plugins folder. ("plugin64" for VirtualDub2).</li>
+</ul>
 Should run on any version of VirtualDub, including VirtualDub2 and VirtualDubMod.
 
 <h2>Issues</h2>
