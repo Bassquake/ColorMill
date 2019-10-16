@@ -22,6 +22,11 @@
 	Eugene Khoroshavin
 	fdump@mail.ru
 */
+/*	Ability to compile 64 bit version added.
+	Contact:
+	Billy Blair
+	adviceuneed@hotmail.com
+*/
 
 #include <windows.h>
 #include <commctrl.h>
@@ -42,7 +47,7 @@
 int RunProc(const FilterActivation *fa, const FilterFunctions *ff);
 int StartProc(FilterActivation *fa, const FilterFunctions *ff);
 int EndProc(FilterActivation *fa, const FilterFunctions *ff);
-long ParamProc(FilterActivation *fa, const FilterFunctions *ff);
+//long ParamProc(FilterActivation *fa, const FilterFunctions *ff);
 int InitProc(FilterActivation *fa, const FilterFunctions *ff);
 int ConfigProc(FilterActivation *fa, const FilterFunctions *ff, HWND hwnd);
 void StringProc(const FilterActivation *fa, const FilterFunctions *ff, char *str);
@@ -55,7 +60,7 @@ void saturatemat(float mat[4][4], float sat);
 void simplehuerotatemat(float mat[4][4], float rot);
 void mat2lmat(float mat[4][4], long lmat[4][4]);
 void lxformRGB(long mat[4][4], long *r, long *g, long *b);
-void xformRGB(float mat[4][4], long *r, long *g, long *b);
+//void xformRGB(float mat[4][4], long *r, long *g, long *b);
 void normrgb(long *r, long *g, long *b);
 ///////////////////////////////////////////////////////////////////////////
 #define M_PI (3.1415926535897932384626433832795) // this is a joke
@@ -225,6 +230,7 @@ bool FssProc(FilterActivation *fa, const FilterFunctions *ff, char *buf, int buf
 }
 
 void ScriptConfig(IScriptInterpreter *isi, void *lpVoid, CScriptValue *argv, int argc) {
+
 	FilterActivation *fa = (FilterActivation *)lpVoid;
 	MyFilterData *mfd = (MyFilterData *)fa->filter_data;
 
@@ -482,16 +488,16 @@ int InitProc(FilterActivation *fa, const FilterFunctions *ff) {
 	return 0;
 }
 
-BOOL CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	MyFilterData *mfd = (MyFilterData *)GetWindowLong(hdlg, DWL_USER);
+	MyFilterData *mfd = (MyFilterData *)GetWindowLongPtr(hdlg, DWLP_USER);
 	int mPr=0;
 	bool redo = false;
 	bool undo = false;
 
 	switch(msg) {
 		case WM_INITDIALOG:
-			SetWindowLong(hdlg, DWL_USER, lParam);
+			SetWindowLongPtr(hdlg, DWLP_USER, lParam);
 			mfd = (MyFilterData *)lParam;
 			HWND hWnd;
 
@@ -553,7 +559,7 @@ BOOL CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam)
 				GetModuleFileName(NULL, prog, 255);
 				GetFullPathName(prog, 255, path, &ptr);
 				*ptr = 0;
-				strcat(path, "plugins\\ColorMill.txt");
+				strcat(path, "plugins64\\ColorMill.txt");
 				OutputDebugString(path);
 				OutputDebugString("\n");
 				strcpy(prog, "Notepad ");
@@ -1145,9 +1151,9 @@ BOOL CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam)
 		case WM_VSCROLL:
 			{
 				int red, green, blue, redold, greenold, blueold, dpos, shlow, shlowold;
-				red = -SendMessage(GetDlgItem(hdlg, IDC_RED), TBM_GETPOS, 0, 0);
-				green = -SendMessage(GetDlgItem(hdlg, IDC_GREEN), TBM_GETPOS, 0, 0);
-				blue = -SendMessage(GetDlgItem(hdlg, IDC_BLUE), TBM_GETPOS, 0, 0);
+				red = -(int)SendMessage(GetDlgItem(hdlg, IDC_RED), TBM_GETPOS, 0, 0);
+				green = -(int)SendMessage(GetDlgItem(hdlg, IDC_GREEN), TBM_GETPOS, 0, 0);
+				blue = -(int)SendMessage(GetDlgItem(hdlg, IDC_BLUE), TBM_GETPOS, 0, 0);
 				switch (mfd->nmfunc) {
 				case IDC_DARK:
 						redold = mfd->redD;
@@ -1357,7 +1363,7 @@ BOOL CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam)
 						greenold = mfd->shxz;
 						blueold = mfd->shpo;
 						shlowold = mfd->shlow;
-						shlow = SendMessage(GetDlgItem(hdlg, IDC_LOWTR), TBM_GETPOS, 0, 0);
+						shlow = (int)SendMessage(GetDlgItem(hdlg, IDC_LOWTR), TBM_GETPOS, 0, 0);
 						if (mfd->shalock) {
 							undo = true;
 							SendMessage(GetDlgItem(hdlg, IDC_LOWTR), TBM_SETPOS, (WPARAM)TRUE, shlowold);
