@@ -1,5 +1,5 @@
-# Color_Mill
-Color Mill VirtualDub 64 bit plugin
+# ColorMill
+ColorMill VirtualDub 64 bit v2.1 plugin
 
 <h2>Why</h2>
 Decided to update the plugin as I use VirtualDub2 in 64 bit mode to use DeShaker on very large files and currently there's only a 32bit version of Color Mill.
