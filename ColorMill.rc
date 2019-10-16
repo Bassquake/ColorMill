@@ -1,0 +1,194 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FILTER DIALOGEX 0, 0, 222, 250
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "filter: Color Mill (2.1)"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "MIDDLE POINT",IDC_MPO,"Button",BS_AUTORADIOBUTTON | 
+                    BS_CENTER | BS_VCENTER | BS_PUSHLIKE | WS_GROUP,6,16,68,
+                    13,WS_EX_STATICEDGE
+    CONTROL         "s OR REAL HSV",IDC_HSV,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,46,67,13,WS_EX_STATICEDGE
+    CONTROL         "GAMMA",IDC_GAMMA,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,75,68,13,WS_EX_STATICEDGE
+    CONTROL         "LEVELS",IDC_LEVELS,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,105,68,13,WS_EX_STATICEDGE
+    CONTROL         "Dark",IDC_DARK,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,142,21,13,WS_EX_STATICEDGE
+    CONTROL         "Middle",IDC_MIDDLE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,26,142,28,13,WS_EX_STATICEDGE
+    CONTROL         "Light",IDC_LIGHT,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,52,142,21,13,WS_EX_STATICEDGE
+    CONTROL         "SATURATION",IDC_SAT,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,180,68,13,WS_EX_STATICEDGE
+    CONTROL         "SHARP<>SMOOTH",IDC_SHARP,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,6,209,68,13,WS_EX_STATICEDGE
+    CONTROL         "lock",IDC_MPOLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,7,21,10
+    CONTROL         "Real",IDC_REALHSV,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,27,37,21,10
+    CONTROL         "lock",IDC_HSVLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,37,21,10
+    CONTROL         "stick",IDC_GAMUNION,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,28,66,21,10
+    CONTROL         "lock",IDC_GAMLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,66,22,10
+    CONTROL         "stick",IDC_LEVUNION,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,28,96,21,10
+    CONTROL         "lock",IDC_LEVLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,96,22,10
+    CONTROL         "stick",IDC_RGBUNION,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,154,67,10
+    CONTROL         "lock",IDC_DARLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,133,20,10
+    CONTROL         "lock",IDC_MIDLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,26,133,27,10
+    CONTROL         "lock",IDC_LIGLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,53,133,20,10
+    CONTROL         "stick",IDC_SATUNION,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,28,171,21,10
+    CONTROL         "lock",IDC_SATLOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,171,22,10
+    CONTROL         "lock",IDC_SHALOCK,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_FLAT,6,200,21,10
+    CONTROL         "Preprocess",IDC_GPRE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,95,201,49,12,WS_EX_STATICEDGE
+    CONTROL         "Postprocess",IDC_GPOST,"Button",BS_AUTORADIOBUTTON | 
+                    BS_LEFTTEXT | BS_PUSHLIKE,152,201,49,12,WS_EX_STATICEDGE
+    EDITTEXT        IDC_REDVAL,89,30,22,12,ES_CENTER | ES_READONLY | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    EDITTEXT        IDC_GREENVAL,136,30,22,12,ES_CENTER | ES_READONLY | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    EDITTEXT        IDC_BLUEVAL,185,30,22,12,ES_CENTER | ES_READONLY | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_RED,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_TOP | WS_TABSTOP,89,43,22,148,
+                    WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_GREEN,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_TOP | WS_TABSTOP,136,43,22,148,
+                    WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_BLUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_TOP | WS_TABSTOP,185,43,22,148,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      ">",IDC_ZEROR,78,111,10,12,BS_BOTTOM,WS_EX_STATICEDGE
+    PUSHBUTTON      ">",IDC_ZEROG,124,111,10,12,BS_CENTER | BS_BOTTOM,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      ">",IDC_ZEROB,174,111,10,12,BS_CENTER | BS_BOTTOM,
+                    WS_EX_STATICEDGE
+    CONTROL         "Keep brightness",IDC_KEEPBR,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP,83,218,64,8
+    CONTROL         "Bad source",IDC_BEDSRC,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP,164,218,50,8,WS_EX_RIGHT
+    PUSHBUTTON      "Show preview",IDPREVIEW,6,230,53,14,WS_GROUP,
+                    WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,66,230,46,14,WS_GROUP,WS_EX_STATICEDGE
+    PUSHBUTTON      "ALL-->0",IDC_ZEROALL,118,230,33,14,WS_GROUP,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Help",IDHELP,157,230,25,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,189,230,29,14,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_RTEXT,82,16,44,12,ES_READONLY | NOT WS_BORDER | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_GTEXT,130,16,44,12,ES_READONLY | NOT WS_BORDER | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_BTEXT,178,16,44,12,ES_READONLY | NOT WS_BORDER | NOT 
+                    WS_TABSTOP
+    LTEXT           "-100",IDC_STATIC,116,178,15,8
+    RTEXT           "+100",IDC_STATIC,117,47,15,8
+    LTEXT           "-100",IDC_STATIC,165,178,15,8
+    RTEXT           "+100",IDC_STATICK,165,47,15,8
+    GROUPBOX        "Select:",IDC_SELBML,2,0,75,227,BS_CENTER
+    GROUPBOX        "Gamma is",IDC_STATIC,89,192,118,24,BS_CENTER
+    EDITTEXT        IDC_FUNAM,82,2,136,12,ES_CENTER | ES_READONLY | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    CTEXT           "RED-GREEN-BLUE",IDC_STATIC,8,124,63,8,NOT WS_GROUP
+    EDITTEXT        IDC_LOWVAL,159,30,14,12,ES_CENTER | ES_READONLY | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_LOWTR,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,159,43,14,55,
+                    WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_FILTER, DIALOG
+    BEGIN
+        VERTGUIDE, 8
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

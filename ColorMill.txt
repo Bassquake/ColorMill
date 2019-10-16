@@ -1,0 +1,42 @@
+Color Mill Filter for VirtualDub
+(Version 2.0)
+Based on Red/Green/Blue (RGB) Adjustment Filter for VirtualDub
+by Donald A. Graft
+
+[Place this text file in the VirtualDub plugins directory to make
+it available via the Help button on the filter configuration dialog
+box. The computer must have a program called Notepad available in
+its search path.]
+
+This filter provides the ability to more precise adjust the red, green,
+blue and balance intensity levels and saturation of a video clip. 
+
+The following options are provided:
+
+Red - This option determines how much red is to be scaled.
+Green - This option determines how much green is to be scaled.
+Blue - This option determines how much blue is to be scaled.
+
+These three options are applicable on three states:
+Dark - to adjust dark areas;
+Middle - to adjust middle areas;
+Light - to adjust light areas.
+
+Also this filter provides the ability to adjust intensity levels and
+saturation on the three separate states:
+Dark - to adjust dark areas;
+Middle - to adjust middle areas;
+Light - to adjust light areas.
+
+For example: to remove colored glares you can decrease saturation->Light.
+Do you like cut-and-try method? :)
+
+In Ver.1.03 added effect booster "Bad source". You can try it.
+In Ver.1.05b added RGB gamma.
+In Ver.1.07 added sHSV with hue similar to real hue.
+In Ver.1.08 added real HSV Adjustment by Donald A. Graft.
+In Ver.2.0 added Middle Point adjustment and Sharp <-> Smooth adjustment
+
+Eugene Khoroshavin
+December 13, 2004
+(C) Copyright 2004, All Rights Reserved
