@@ -1,8 +1,8 @@
-# ColorMill
-ColorMill VirtualDub 64 bit v2.1 plugin
+# Color Mill
+Color Mill VirtualDub 64 bit v2.1 plugin. Used as a RGB, HSV, Saturation, Levels, Brightness, Contrast, Sharpness filter.
 
 <h2>Why</h2>
-Decided to update the plugin as I use VirtualDub2 in 64 bit mode to use DeShaker on very large files and currently there's only a 32bit version of ColorMill. So edited the original 32 bit v2.1 source code to 64 bit!
+Decided to update the plugin as I use VirtualDub2 in 64 bit mode to use DeShaker on very large files and currently there's only a 32bit version of Color Mill. So edited the original 32 bit v2.1 source code to 64 bit!
 
 <h2>Credits</h2>
 Credit goes to Eugene Khoroshavin for the original code.<br/>
