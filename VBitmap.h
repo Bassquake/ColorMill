@@ -46,7 +46,7 @@ typedef unsigned long	Pixel32;
 typedef unsigned char	Pixel8;
 typedef long			PixCoord;
 typedef	long			PixDim;
-typedef	long long		PixOffset; // was just typdef long
+typedef	ptrdiff_t		PixOffset; // Match VBitmap.h used in VDub. Was typdef long. Can be typedef long long.
 
 #ifdef VDEXT_VIDEO_FILTER
 #define NOVTABLE __declspec(novtable)

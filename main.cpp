@@ -313,7 +313,7 @@ CScriptObject script_obj={
 struct FilterDefinition filterDef_tutorial = {
 
 	NULL, NULL, NULL,		// next, prev, module
-	"Color Mill(2.1)",	// name
+	"Color Mill (2.1)",	// name
 	"Adjust RGB, RGB gamma, Levels, Saturation, HSV and similar HSV(distorted), Middle Point, also  Smooth<->Sharp.",
 							// desc
 	"Eugene Khoroshavin", 		// maker
@@ -2058,11 +2058,11 @@ inline void sharp(MyFilterData *mfd, long *r, long *g, long *b, Pixel32 *src, Pi
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src2[x] & 0xff0000) >> 16) + ((src2[x] & 0xff00) >> 8) + (src2[x] & 0xff);
+			//u1 = ((src2[x] & 0xff0000) >> 16) + ((src2[x] & 0xff00) >> 8) + (src2[x] & 0xff);// Breaks 2
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src2[x2] & 0xff0000) >> 16) + ((src2[x2] & 0xff00) >> 8) + (src2[x2] & 0xff);
+			//u1 = ((src2[x2] & 0xff0000) >> 16) + ((src2[x2] & 0xff00) >> 8) + (src2[x2] & 0xff);// Break 3
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
@@ -2104,15 +2104,15 @@ inline void sharp(MyFilterData *mfd, long *r, long *g, long *b, Pixel32 *src, Pi
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src[x2] & 0xff0000) >> 16) + ((src[x2] & 0xff00) >> 8) + (src[x2] & 0xff);
+			//u1 = ((src[x2] & 0xff0000) >> 16) + ((src[x2] & 0xff00) >> 8) + (src[x2] & 0xff);// Breaks 6
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src2[x] & 0xff0000) >> 16) + ((src2[x] & 0xff00) >> 8) + (src2[x] & 0xff);
+			//u1 = ((src2[x] & 0xff0000) >> 16) + ((src2[x] & 0xff00) >> 8) + (src2[x] & 0xff);// Breaks 4
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src2[x2] & 0xff0000) >> 16) + ((src2[x2] & 0xff00) >> 8) + (src2[x2] & 0xff);
+			//u1 = ((src2[x2] & 0xff0000) >> 16) + ((src2[x2] & 0xff00) >> 8) + (src2[x2] & 0xff);// Breaks 1
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
@@ -2120,7 +2120,7 @@ inline void sharp(MyFilterData *mfd, long *r, long *g, long *b, Pixel32 *src, Pi
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
-			u1 = ((src2[x0] & 0xff0000) >> 16) + ((src2[x0] & 0xff00) >> 8) + (src2[x0] & 0xff);
+			//u1 = ((src2[x0] & 0xff0000) >> 16) + ((src2[x0] & 0xff00) >> 8) + (src2[x0] & 0xff);// Breaks 5
 			dy = abs((int)(u1-u));
 			if ((dy < DU) && (dy > dlow)) UU += u1;
 			else UU += u;
