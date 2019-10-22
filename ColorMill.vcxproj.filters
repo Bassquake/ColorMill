@@ -51,6 +51,7 @@
     <None Include="ColorMill.VC.db" />
     <None Include="ColorMill.dsw" />
     <None Include="UpgradeLog.htm" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ColorMill.txt" />

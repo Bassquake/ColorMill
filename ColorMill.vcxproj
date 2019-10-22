@@ -70,22 +70,31 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>.\Win32\Release\</OutDir>
+    <IntDir>.\Temp\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.vdf</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <OutDir>.\x64\Release\</OutDir>
+    <IntDir>.\Temp\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.vdf</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>.\Win32\Debug\</OutDir>
+    <IntDir>.\Temp\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.vdf</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\x64\Debug\</OutDir>
+    <IntDir>.\Temp\</IntDir>
+    <TargetExt>.vdf</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -98,11 +107,12 @@
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;Rgb_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Release\ColorMill.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AssemblerListingLocation>.\Temp\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Temp\ColorMill.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Temp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Temp\</ProgramDataBaseFileName>
+      <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -124,9 +134,10 @@
       <LinkDLL>true</LinkDLL>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Release/ColorMill.vdf</OutputFile>
-      <ImportLibrary>.\Release\ColorMill.lib</ImportLibrary>
+      <OutputFile>.\Win32\Release\ColorMill.vdf</OutputFile>
+      <ImportLibrary>.\Temp\ColorMill.lib</ImportLibrary>
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>./Temp/$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,11 +151,11 @@
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;Rgb_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Release\ColorMill.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AssemblerListingLocation>.\Temp\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Temp\ColorMill.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Temp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Temp\</ProgramDataBaseFileName>
       <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Midl>
@@ -166,9 +177,11 @@
       <LinkDLL>true</LinkDLL>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Release/ColorMill.vdf</OutputFile>
-      <ImportLibrary>.\Release\ColorMill.lib</ImportLibrary>
+      <ImportLibrary>.\Temp\ColorMill.lib</ImportLibrary>
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>./x64/Release/ColorMill.vdf</OutputFile>
+      <ProgramDatabaseFile>./Temp/$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -182,11 +195,11 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;Rgb_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
-      <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Debug\ColorMill.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AssemblerListingLocation>.\Win32\Debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Win32\Debug\ColorMill.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Win32\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Win32\Debug\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -197,7 +210,7 @@
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
-      <ResourceOutputFileName>Release/ColorMill.res</ResourceOutputFileName>
+      <ResourceOutputFileName>./Win32/Debug/ColorMill.res</ResourceOutputFileName>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Bscmake>
@@ -209,14 +222,20 @@
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <OutputFile>Debug/ColorMill.vdf</OutputFile>
-      <ImportLibrary>.\Debug\ColorMill.lib</ImportLibrary>
+      <OutputFile>./Win32/Debug/ColorMill.vdf</OutputFile>
+      <ImportLibrary>.\Win32\Debug\ColorMill.lib</ImportLibrary>
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Manifest>
+      <OutputManifestFile>./Win32/Debug/.embed.manifest</OutputManifestFile>
+    </Manifest>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>./Win32/Debug/.embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
@@ -225,11 +244,11 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;Rgb_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
-      <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Debug\ColorMill.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AssemblerListingLocation>.\x64\Debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\x64\Debug\ColorMill.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\x64\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\x64\Debug\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -239,7 +258,7 @@
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
-      <ResourceOutputFileName>Release/ColorMill.res</ResourceOutputFileName>
+      <ResourceOutputFileName>./x64/Debug/ColorMill.res</ResourceOutputFileName>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Bscmake>
@@ -251,10 +270,16 @@
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <OutputFile>Debug/ColorMill.vdf</OutputFile>
-      <ImportLibrary>.\Debug\ColorMill.lib</ImportLibrary>
+      <OutputFile>./x64/Debug/ColorMill.vdf</OutputFile>
+      <ImportLibrary>.\x64\Debug\ColorMill.lib</ImportLibrary>
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Manifest>
+      <OutputManifestFile>./x64/Debug/.embed.manifest</OutputManifestFile>
+    </Manifest>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>./x64/Debug/.embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ResourceCompile Include="ColorMill.rc" />
@@ -276,6 +301,7 @@
     <None Include="ColorMill.sln" />
     <None Include="ColorMill.VC.db" />
     <None Include="Copying" />
+    <None Include="README.md" />
     <None Include="UpgradeLog.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>

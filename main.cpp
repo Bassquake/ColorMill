@@ -190,7 +190,7 @@ void gamma(MyFilterData *mfd, long *r, long *g, long *b);
 bool FssProc(FilterActivation *fa, const FilterFunctions *ff, char *buf, int buflen) {
 	MyFilterData *mfd = (MyFilterData *)fa->filter_data;
 
-	_snprintf(buf, buflen, "Config(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)",
+	_snprintf_s(buf, buflen, _TRUNCATE, "Config(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)",
 								  //1	2	3	4	5	6	7	8	9	a   b   c   d   e   f
 		(mfd->redD + 100)	| ((mfd->greenD + 100) << 8),	//1
 		(mfd->blueD + 100)	| ((mfd->redM + 100) << 8),		//2
@@ -559,11 +559,11 @@ INT_PTR CALLBACK ConfigDlgProc(HWND hdlg, UINT msg, WPARAM wParam, LPARAM lParam
 				GetModuleFileName(NULL, prog, 255);
 				GetFullPathName(prog, 255, path, &ptr);
 				*ptr = 0;
-				strcat(path, "plugins64\\ColorMill.txt");
+				strcat_s(path, "plugins64\\ColorMill.txt");
 				OutputDebugString(path);
 				OutputDebugString("\n");
-				strcpy(prog, "Notepad ");
-				strcat(prog, path);
+				strcpy_s(prog, "Notepad ");
+				strcat_s(prog, path);
 				WinExec(prog, SW_SHOW);
 				return TRUE;
 				}
