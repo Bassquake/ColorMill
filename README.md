@@ -17,4 +17,5 @@ http://fdump.narod.ru/rgb.htm
 Should run on any version of VirtualDub, including VirtualDub2 and VirtualDubMod.
 
 <h2>Issues</h2>
-Currently crashes if move the slider for Sharpness Preprocess. Happens in original code too so looking into it.
+<s>Currently crashes if move the slider for Sharpness Preprocess. Happens in original code too so looking into it.</s><br/>
+Commented out the lines causing crashes when using Preprocess in Sharpness.
