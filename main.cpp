@@ -51,7 +51,7 @@ int EndProc(FilterActivation *fa, const FilterFunctions *ff);
 int InitProc(FilterActivation *fa, const FilterFunctions *ff);
 int ConfigProc(FilterActivation *fa, const FilterFunctions *ff, HWND hwnd);
 void StringProc(const FilterActivation *fa, const FilterFunctions *ff, char *str);
-void ScriptConfig(IScriptInterpreter *isi, void *lpVoid, CScriptValue *argv, int argc);
+//void ScriptConfig(IScriptInterpreter *isi, void *lpVoid, CScriptValue *argv, int argc);
 bool FssProc(FilterActivation *fa, const FilterFunctions *ff, char *buf, int buflen);
 int normpos( int a, int b, int c, int pos);
 void identmat(float mat[4][4]);
@@ -80,10 +80,10 @@ const char * mptxt = "Middle Point";
 const char * mstxt = "Booster";
 const char * sitxt = "Base Shift";
 const char * shprtxt = "Preprocess";
-const char * shxztxt = "Dam H & low";
+const char * shxztxt = "Dam H & Low";
 const char * shpotxt = "Postprocess";
 const char * func1txt = "Middle Point";
-const char * func2txt = "similar or real HSV";
+const char * func2txt = "Similar or real HSV";
 const char * func3txt = "Gamma";
 const char * func4txt = "Levels";
 const char * func5txt = "R-G-B Dark";
@@ -191,7 +191,7 @@ bool FssProc(FilterActivation *fa, const FilterFunctions *ff, char *buf, int buf
 	MyFilterData *mfd = (MyFilterData *)fa->filter_data;
 
 	_snprintf_s(buf, buflen, _TRUNCATE, "Config(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)",
-								  //1	2	3	4	5	6	7	8	9	a   b   c   d   e   f
+												//1	 2	3	4	5	6	7	8	9	a   b   c   d   e   f
 		(mfd->redD + 100)	| ((mfd->greenD + 100) << 8),	//1
 		(mfd->blueD + 100)	| ((mfd->redM + 100) << 8),		//2
 		(mfd->greenM + 100)	| ((mfd->blueM + 100) << 8),	//3

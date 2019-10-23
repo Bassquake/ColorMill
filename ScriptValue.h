@@ -82,7 +82,14 @@ public:
 		ScriptFunctionDef *fname;
 		VariableTableEntry *vte;
 	} u;
-	void *lpVoid;
+	
+	// Use void for Win32 only. Hacky but no idea what the void does. Loading config only seems to work without it for 64bit.
+	#if _WIN32 || _WIN64
+	#if _WIN64
+	#else
+		void *lpVoid;
+	#endif
+	#endif
 
 	CScriptValue()						{ type = T_VOID; }
 	CScriptValue(int i)					{ type = T_INT;			u.i = i; }
@@ -115,7 +122,7 @@ public:
 	bool isFunction()		{ return type == T_FUNCTION; }
 	bool isVarLV()			{ return type == T_VARLV; }
 
-	int					asInt()			{ return u.i; }
+	long					asInt()			{ return u.i; }
 	char **				asString()		{ return u.s; }
 	ScriptArrayFunctionPtr		asArray()		{ return u.ary; }
 	CScriptObject *		asObject()		{ return u.obj; }
