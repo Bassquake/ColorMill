@@ -14,7 +14,8 @@ http://fdump.narod.ru/rgb.htm
   <li>Open the ColorMill.sln file, choose Release and x64 then run Local Windows Debugger.</li>
   <li>Copy the resulting ColorMill.vdf from "Release" folder to the VirtualDub plugins folder. ("plugin64" for VirtualDub2).</li>
 </ul>
-Should run on any version of VirtualDub, including VirtualDub2 and VirtualDubMod.
+Should run on any version of VirtualDub, including VirtualDub2 and VirtualDubMod.<br/>
+Or if you prefer, download the plugin files directly from the <em>Win32/Release</em> folder for 32bit or <em>x64/Release</em> for 64bit.<br/>
 
 <h2>Issues</h2>
 <s>Currently crashes if move the slider for Sharpness Preprocess. Happens in original code too so looking into it.</s><br/>
