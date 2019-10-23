@@ -18,6 +18,6 @@ Should run on any version of VirtualDub, including VirtualDub2 and VirtualDubMod
 
 <h2>Issues</h2>
 <s>Currently crashes if move the slider for Sharpness Preprocess. Happens in original code too so looking into it.</s><br/>
-Commented out the lines causing crashes when using Preprocess in Sharpness.
-<s>Values would bork in Color Mill when open processing settings.</s>
-Put hacky fix for now. There's a line in ScripValue.h (Line 86) that works for 32bit but not 64bit so put an if statement for now.
+Commented out the lines causing crashes when using Preprocess in Sharpness.<br/>
+<s>Values would bork in Color Mill when open processing settings.</s><br/>
+Put hacky fix for now. There's a line in ScripValue.h (Line 86) that works for 32bit but not 64bit so put an if statement for now.<br/>
